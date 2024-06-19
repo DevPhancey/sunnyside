@@ -1,0 +1,790 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    --color1: #FFF ;
+    --color2: #181818 ;
+}
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: var(--color2);
+    padding: 12px 20px;
+}
+.logo img {width: 40px;}
+.menu {display: flex;}
+.menu li {padding-left: 30px;}
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.15s ease-in-out;
+}
+.menu li a:hover:after {width: 100%;}
+.open-menu , .close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+#check {display: none;}
+@media(max-width: 610px){
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li {margin-top: 40px;}
+    .menu li a {padding: 10px;}
+    .open-menu , .close-menu {display: block;}
+    #check:checked ~ .menu {right: 0;}
+}
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+<body>
+    <header>
+    <nav>
+        <ul class='nav-bar'>
+            <li class='logo'><a href='#'><img src='./images/logo.png'/></a></li>
+            <input type='checkbox' id='check' />
+            <span class="menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+            </span>
+            <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+        </ul>
+    </nav>
+    </header>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+REAL THING
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+      rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Fraunces"> 
+  <script src="script.js"></script>
+  <title>Frontend Mentor | Sunnyside agency landing page</title>
+
+</head>
+<body>
+  <div class="conntainer">
+    <nav class="menu-container">
+      <!-- burger menu -->
+      <input type="checkbox" aria-label="Toggle menu" />
+      <span></span>
+      <span></span>
+      <span></span>
+    
+      <!-- logo -->
+      <a href="#" class="menu-logo">
+        <img src="images/logo.svg" class="logo" id="logo" alt="My Awesome Website" />
+      </a>
+    
+      <!-- menu items -->
+      <div class="menu">
+        <ul>
+        </ul>
+        <ul>
+          <li>
+            <a href="#about">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#Services">
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="#Projects">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#Contact">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+   <div class="background-container">
+        <img src="images/mobile/image-header.jpg" class="header-img" id="mobile-img" alt="header">
+    </div>
+  </div>
+
+
+  <div class="creatives">
+    <h1>We are creatives</h1>
+    <img src="images/icon-arrow-down.svg" id="arrow" alt="arrow">
+  </div>
+
+  <div class="transform">
+    <img src="images/mobile/image-transform.jpg" alt="transform" id="mobile-img" class="transform-img">
+    <div class="note">
+      <h1>Transform your brand</h1>
+      <p>We are a full-service creative agency specializing in helping brands grow fast.
+        Engage your clients through compelling visuals that do most of the marketing for you.</p>
+        <span class="learn"><a href="#" id="learnm">Learn more</a></span>
+      </div>
+  </div>
+  <div class="audience">
+    <img src="images/mobile/image-stand-out.jpg" alt="standout" id="mobile-img" class="standout-img">
+    <div class="stanout-note">
+      <h1>Stand out to the right audience</h1>
+      <p>Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and
+        extend your brand in digital places.</p>
+      <span class="learn"><a href="#">Learn more</a></span>
+    </div>
+  </div>
+
+  <div class="graphic">
+    <img src="/images/mobile/image-graphic-design.jpg" class="graphic-design" alt="graphic-img" id="mobile-img">
+    <div class="graphic-top">
+      <h1>Graphic design</h1>
+      <p>Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’
+        attention.</p>
+    </div>
+  </div>
+  <div class="photography">
+    <img src="images/mobile/image-photography.jpg" id="mobile-img" alt="photography-img">
+    <div class="photography-top">
+      <h1>Photography</h1>
+      <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business image.</p>
+    </div>
+  </div>
+
+  <div class="testimonial">
+    <h3>Client testimonials</h3>
+    <div class="profile1">
+      <img src="images/image-emily.jpg" alt="emily" id="profiles">
+      <p class="parap">We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.</p>
+      <h4 id="names">Emily R.</h4>
+      <p class="shift">Marketing Director</p>
+    </div>
+    <div class="profile2">
+      <img src="images/image-thomas.jpg" alt="thomas" id="profiles">
+      <p class="parap">Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable
+      experience.</p>
+      <h4 id="names">Thomas S.</h4>
+      <p class="shift">Chief Operating Officer</p>
+    </div>
+    <div class="profile3">
+      <img src="images/image-jennie.jpg" alt="jennie" id="profiles">
+      <p class="parap">Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+      <h4 id="names">Jennie F.</h4>
+      <p class="shift">Business Owner</p>
+    </div>
+  </div>
+  <div class="bottom-img">
+    <div class="div1">
+      <img src="images/mobile/image-gallery-milkbottles.jpg"  alt="milkbottles" id="bottom-img">
+    </div>
+    <div class="div2">
+      <img src="images/mobile/image-gallery-orange.jpg" alt="oranges" id="bottom-img">
+    </div>
+    <div class="div3">
+      <img src="images/mobile/image-gallery-cone.jpg" alt="cone" id="bottom-img">
+    </div>
+    <div class="div4">
+      <img src="images/mobile/image-gallery-sugar-cubes.jpg" alt="sugar" id="bottom-img">
+    </div>
+  </div>
+  <div class="footer">
+    <h2 class="sunny"><a href="#">sunnyside</a></h2>
+    <div>
+      <a href="#" id="link">About</a>
+      <a href="#" id="link">Services</a>
+      <a href="#" id="link">Projects</a>
+    </div>
+    <div class="socials">
+      <img src="images/icon-facebook.svg" id="socials" alt="facebook">
+      <img src="images/icon-instagram.svg" id="socials" alt="instagram">
+      <img src="images/icon-twitter.svg" alt="twitter" id="socials" >
+      <img src="images/icon-pinterest.svg" alt="pinterest" id="socials" >
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+  
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Barlow;
+    /* height: 100vh;    */
+    /* background-color: black; */
+    
+}
+
+body {
+    overflow-x: hidden;
+    font-size: 18px;
+}
+.creatives h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%);
+    font-weight: 900;
+    letter-spacing: 5px;
+} 
+
+
+#learnm  {
+    color: hsl(212, 27%, 19%);
+    text-decoration: underline;
+    text-decoration-color: hsl(51, 100%, 49%);
+    text-decoration-thickness: 4px;
+}
+
+.learn {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.transform h1{
+    font-family: Fraunces;
+    font-weight: 900;
+    color:hsl(212, 27%, 19%);
+}
+.transform p{
+    font-weight: 400;
+}
+.stanout-note h1{
+    font-family: Fraunces;
+    color:hsl(212, 27%, 19%);
+    font-weight: 900; 
+}
+.learn a{
+    color: hsl(212, 27%, 19%);
+    text-decoration: underline;
+    text-decoration-color: hsl(7, 99%, 70%);
+    text-decoration-thickness: 4px;
+}
+.graphic-top {
+    color: hsl(167, 40%, 24%);
+    font-weight: 600;
+    /* font-family: Fraunces; */
+}
+.graphic-top h1{
+    font-family: Fraunces;
+}
+
+.photography-top{
+    color: hsl(198, 62%, 26%);
+    font-weight: 600;
+}
+.photography-top h1{
+    font-family: Fraunces;
+
+}
+.testimonial h3{
+    letter-spacing: 3px;
+    color:hsl(210, 4%, 67%);
+}
+.testimonial p{
+    font-weight: 400;
+}
+#names{
+    font-family: Fraunces;
+    font-weight: 900;
+}
+.shift{
+    color:hsl(210, 4%, 67%);
+    font-size: 15px;
+}
+.footer{
+    background-color:hsl(168, 34%, 41%);
+    color: hsl(168, 34%, 41%);
+    text-align: center;
+}
+#link{
+    color:hsl(167, 40%, 24%);
+}
+.sunny{
+    font-size: 35px;
+    font-weight: 900;
+    padding-bottom: 20px;
+}
+.sunny a{
+    color: hsl(167, 40%, 24%);
+    text-decoration: none;
+}
+.menu-container {
+    position: absolute;
+    /* top: 0; */
+    width: 100%;
+    /* position: relative; */
+    display: flex;
+    /* align-items: center; */
+    /* margin-bottom: 20px; */
+    /* background: #232323; */
+    color: #cdcdcd;
+    padding: 20px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.menu-logo {
+    line-height: 0;
+    margin: 0 20px;
+}
+
+.menu-logo img {
+    max-height: 40px;
+    max-width: 100px;
+    flex-shrink: 0;
+}
+
+.menu-container a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+}
+
+.menu-container a:hover {
+    color: #00C6A7;
+}
+
+.menu-container input {
+    display: block;
+    width: 35px;
+    height: 25px;
+    margin: 0;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    /* hide this */
+    z-index: 2;
+    /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+}
+
+/* Burger menu */
+.menu-container span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+            overflow: hidden;
+        
+}
+
+.menu-container span:first-child {
+    transform-origin: 0% 0%;
+}
+
+.menu-container span:nth-child(3) {
+    transform-origin: 0% 100%;
+}
+
+.menu-container input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(3px, -1px);
+    background: #232323;
+}
+
+.menu-container input:checked~span:nth-child(4) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.menu-container input:checked~span:nth-child(3) {
+    transform: rotate(-45deg) translate(-5px, 11px);
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+/* mobile styles */
+@media only screen and (max-width: 767px) {
+    .menu-container {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .conntainer{
+        
+    }
+
+    .menu-logo {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        /* display: none; */
+    }
+
+    .menu-logo img {
+        max-height: 30px;
+    }
+
+    .menu {
+        position: fixed;
+        box-sizing: border-box;
+        width: 300px;
+        right: -300px;
+        top: 0;
+        margin: -20px;
+        padding: 75px 50px 50px;
+        background: white;
+        /* display: none; */
+        -webkit-font-smoothing: antialiased;
+        /* to stop flickering of text in safari */
+        transform-origin: 0% 0%;
+        transform: translateX(0%);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    .menu-container input:checked~.menu {
+        transform: translateX(-100%);
+        /* display: none; */
+    }
+#mobile-img{
+    width: 100%;
+}
+.header-img {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.creatives {
+    position: absolute;
+    top: 0;
+    margin: 250px 50px;
+    text-align: center;
+    justify-content: center;
+}
+#arrow{
+    margin-top: 30px;
+}
+.note{
+    margin: 20px;
+    text-align: center;
+}
+.note p{
+    margin: 10px;
+    padding: 30px;
+}
+
+.note h1{
+    margin: 10px 70px;
+}
+.stanout-note p{
+    padding-bottom: 20px;
+}
+.stanout-note{
+    margin: 30px 40px;
+    text-align: center;
+}
+.stanout-note h1{
+    /* background-color:black ; */
+    margin: 0 50px;
+    padding-bottom:30px ;
+}
+.graphic-design{
+    display: block;
+}
+.audience{
+    position: relative;
+}
+.graphic-top{
+    position: absolute;
+    margin-top: -50%;
+    text-align: center;
+}
+.graphic-top h1{
+    text-transform: capitalize;
+}
+.graphic-top p{
+    margin: 20px 50px;
+}
+
+
+.photography-top{
+    position: absolute;
+    margin-top: -50%;
+    text-align: center;
+}
+.photography-top h1{
+    padding-bottom: 20px;
+}
+.photography-top p{
+padding: 0 50px;
+}
+.testimonial h3{
+    /* text-align: center; */
+    text-transform: uppercase;
+    padding: 40px;
+}
+.testimonial{
+    text-align:  center;
+    padding: 20px 50px;
+}
+
+#profiles{
+    width: 15%;
+    border-radius: 50%;
+}
+
+.testimonial img{
+    margin: 20px 50px;
+}
+
+.parap{
+    margin: 15px 20px;
+}
+#names{
+    padding-top: 20px;
+}
+.shift{
+    padding-bottom: 40px;
+}
+#bottom-img{
+    width: 100%;
+    margin-bottom: -6px;
+}
+.bottom-img {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    
+    }
+    
+    .div1 {
+        grid-area: 1 / 1 / 7 / 7;
+    }
+    
+    .div2 {
+        grid-area: 1 / 7 / 7 / 13;
+    }
+    
+    .div3 {
+        grid-area: 7 / 1 / 13 / 7;
+    }
+    
+    .div4 {
+        grid-area: 7 / 7 / 13 / 13;
+    }
+    .footer{
+        padding: 50px;
+    }
+    #link{
+        padding: 30px;
+        text-decoration: none;
+
+    }
+    .bottom-logo{
+        width: 40%;
+        padding-bottom: 20px;
+    }
+    #socials{
+        padding:0 10px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+}
+/* desktop styles */
+@media only screen and (min-width: 768px) {
+    .menu-container {
+        width: 100%;
+    }
+
+    .menu-container a {
+        color: #cdcdcd;
+    }
+
+    .menu-container input {
+        display: none;
+    }
+
+    /* Burger menu */
+    .menu-container span {
+        display: none;
+    }
+
+    .menu {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu ul {
+        display: flex;
+        padding: 0;
+    }
+
+    .menu li {
+        padding: 0 20px;
+    }
+}
